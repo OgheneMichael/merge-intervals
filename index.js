@@ -5,6 +5,7 @@ const handleActions = (list) => {
 	list.forEach((item) => {
 		let interval = [item.start, item.end];
 		if (item.action === "REMOVED") {
+			// Search and remove every occurrence of current item marked as "REMOVED" from list
 			newList = newList.filter((el) => stringify(el) !== stringify(interval));
 		} else if (item.action === "DELETED") {
 			// TODO: handle deleting if interval block
